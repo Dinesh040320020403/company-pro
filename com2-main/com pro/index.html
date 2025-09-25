@@ -29,7 +29,7 @@
 
             <!-- Dropdown for Services -->
             <li class="dropdown">
-                <a href="service.html" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+                <a href="#" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
                 <ul class="dropdown-content">
                     <li><a href="cloudweb.html">Web Hosting</a></li>
                     <li><a href="cloud.html">Cloud Services</a></li>
@@ -45,7 +45,7 @@
         </ul>
     </nav>
 
-    <button id="openForm" class="btn btn-primary">Book Appointment</button>
+    <button id="openForm" class="btn book-appointment-btn">Book Appointment</button>
 
 <!-- Popup Form -->
 <div id="appointmentForm" class="popup">
@@ -67,12 +67,18 @@
 <script>
 const sheetURL = "https://script.google.com/macros/s/AKfycbz2Ea4UEferfZx-LHPcyMMbIII6PqVTEg4qxbfSy_lgi9lj0U1XjzPouqCL8r2DiiIx/exec"; // replace with your web app URL
 
-// Open & Close Popup
-document.getElementById("openForm").onclick = () => {
-  document.getElementById("appointmentForm").style.display = "block";
+// Open & Close Popup with animation class toggle
+const popup = document.getElementById("appointmentForm");
+const openBtn = document.getElementById("openForm");
+const closeBtn = document.getElementById("closeForm");
+
+openBtn.onclick = () => {
+  popup.style.display = "flex";
+  requestAnimationFrame(() => popup.classList.add("active"));
 };
-document.getElementById("closeForm").onclick = () => {
-  document.getElementById("appointmentForm").style.display = "none";
+closeBtn.onclick = () => {
+  popup.classList.remove("active");
+  popup.style.display = "none";
 };
 
 // Submit Form
@@ -95,8 +101,7 @@ document.getElementById("appointmentData").onsubmit = async (e) => {
   e.target.reset();
 };
 </script>
-</header>
- <button id="openForm" class="btn btn-primary">Book Appointment</button>
+ </header>
 
      
     
