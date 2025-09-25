@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Pioneer</title>
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="./images/ap2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo"><img src="./images/ap2.png" alt="Apex Pioneer"></a>
+    <div class="fas fa-bars"></div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#index">Home</a></li>
+            <li><a href="#about">About</a></li>
+
+            <!-- Dropdown for Services -->
+            <li class="dropdown">
+                <a href="service.html" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="cloudweb.html">Web Hosting</a></li>
+                    <li><a href="cloud.html">Cloud Services</a></li>
+                    <li><a href="web.html">Web App Development</a></li>
+                    <li><a href="mobile.html">Mobile App Development</a></li>
+                    <li><a href="digital.html">Digital Marketing</a></li>
+                </ul>
+            </li>
+
+            <li><a href="career.html">Career</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <button id="openForm" class="btn btn-primary">Book Appointment</button>
+
+<!-- Popup Form -->
+<div id="appointmentForm" class="popup">
+  <div class="popup-content">
+    <span id="closeForm" class="close">&times;</span>
+    <h2>Book Appointment</h2>
+    <form id="appointmentData">
+      <input type="text" name="name" placeholder="Full Name" required><br>
+      <input type="text" name="location" placeholder="Location" required><br>
+      <input type="text" name="city" placeholder="City" required><br>
+      <input type="email" name="email" placeholder="Email" required><br>
+      <input type="tel" name="phone" placeholder="Contact Number" pattern="[0-9]{10}" required><br>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+    <p id="responseMsg"></p>
+  </div>
+</div>
+
+<script>
+const sheetURL = "https://script.google.com/macros/s/AKfycbz2Ea4UEferfZx-LHPcyMMbIII6PqVTEg4qxbfSy_lgi9lj0U1XjzPouqCL8r2DiiIx/exec"; // replace with your web app URL
+
+// Open & Close Popup
+document.getElementById("openForm").onclick = () => {
+  document.getElementById("appointmentForm").style.display = "block";
+};
+document.getElementById("closeForm").onclick = () => {
+  document.getElementById("appointmentForm").style.display = "none";
+};
+
+// Submit Form
+document.getElementById("appointmentData").onsubmit = async (e) => {
+  e.preventDefault();
+  let formData = {
+    name: e.target.name.value,
+    location: e.target.location.value,
+    city: e.target.city.value,
+    email: e.target.email.value,
+    phone: e.target.phone.value
+  };
+
+  let res = await fetch(sheetURL, {
+    method: "POST",
+    body: JSON.stringify(formData)
+  });
+
+  document.getElementById("responseMsg").innerText = "Appointment booked successfully!";
+  e.target.reset();
+};
+</script>
+</header>
+ <button id="openForm" class="btn btn-primary">Book Appointment</button>
+
+     
+    
+
+    <div class="watermark">
+        <img src="./images/ap2.png" alt="apex pioneer">
+
+    </div>
+    
+    
+    
+  <section id="home" class="home">
+      <h1>Bring your Business Online</h1>
+      <h2>with IT Company Services</h2>
+      <div class="cal-dropdown">
+    <a href="#"><img src="./images/cal.png" alt="Calendar" class="cal"></a>
+    <ul class="dropdown-content">
+        <li><a href="#">Join Meet</a></li>
+        <li><a href="https://drive.google.com/drive/u/0/folders/1ph2Dk7OlzB2nkIfPuTRnC5xyihQQV-nb">View Recording</a></li>
+    </ul>
+</div>
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+  </section>
+  
+
+  <section id="about" class="about">
+    <h1 class="heading">about us</h1>
+    <div class="row">
+        <div class="content">
+            <h3>We make creativity work for your brand!</h3>
+            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
+                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
+            <a href="#"><button class="btn">Read More</button></a>
+        </div>
+    </div>
+  </section>
+
+  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
+    <div class="container">
+       
+      <div class="row">
+        <div class="section-head col-sm-12" id="service">
+            
+          <h1>Our Services</h1>
+          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
+            </p>
+        </div>
+
+
+        <center>
+            <a href="cloudweb.html">
+                <div class="col-lg-10 col-sm-4">
+            <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
+              <h6>Web Hosting</h6>
+              <p>Clouds come floating into my life, no longer to carry rain or usher storm, but to add color to my sunset sky. There was a star riding through clouds one night, & I said to the star, 'Consume me'.</p>
+              <div class="lo">
+                <i class="fas fa-arrow-right"></i>
+
+              </div>
+            </div>
+           
+          </div>
+            </a>
+          </center>
+        <div class="row">
+          <center>
+            <a href="cloud.html">
+                <div class="col-lg-10 col-sm-4">
+            <div class="item">  <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
+              <h6>Cloud Services</h6>
+              <p>Clouds come floating into my life, no longer to carry rain or usher storm, but to add color to my sunset sky. There was a star riding through clouds one night, & I said to the star, 'Consume me'.</p>
+              <div class="lo">
+                <i class="fas fa-arrow-right"></i>
+
+              </div>
+            </div>
+           
+          </div>
+            </a>
+          </center>  
+          
+          
+
+
+         <div class="row">
+
+            <div class="col-lg-4 col-sm-6">
+                <a href="web.html">
+          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
+            <h6>Web App Development</h6>
+            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
+             <div class="lo">
+                <i class="fas fa-arrow-right"></i>
+
+              </div>
+          </div>
+          </a>
+        </div>
+        
+            <div class="col-lg-4 col-sm-6">
+                <a href="mobile.html">
+                    <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
+                    <h6>Mobile App Development</h6>
+                    <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
+          
+                    <div class="lo">
+                     <i class="fas fa-arrow-right"></i></a>
+
+                    </div>
+                </div>
+
+                </a>
+                
+            </div>
+        
+        <a href="digital.html">
+            <div class="col-lg-4 col-sm-6">
+          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
+            <h6>Digital Marketing</h6>
+            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
+            <div class="lo">
+                <a href="digital.html"><i class="fas fa-arrow-right"></i></a>
+
+            </div>  
+        </div>
+        </div>
+        </a>
+      </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  <section class="counters">
+    <div class="container">
+        <div>
+            <i class="far fa-clock fa-4x"></i>
+            <div class="counter" data-target="13500">12800</div>
+            <h3>Working Hours</h3>
+        </div>
+        <div>
+            <i class="fas fa-gift fa-4x"></i>
+            <div class="counter" data-target="720">500+</div>
+            <h3>Completed Projects</h3>
+        </div>
+        <div>
+            <i class="fas fa-users fa-4x"></i>
+            <div class="counter" data-target="480">350+</div>
+            <h3>Happy Clients</h3>
+        </div>
+        <div>
+            <i class="fas fa-award fa-4x"></i>
+            <div class="counter" data-target="120">100</div>
+            <h3>Awards Received</h3>
+        </div>
+    </div>
+
+
+</section>
+
+
+    
+</div>
+
+
+
+<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+
+<section class="team" style="margin-top: 7rem;">
+  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
+  <p></p>
+  <div class="row">
+      <div class="card">
+          <div class="image">
+              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
+          </div>
+          <div class="info">
+              <h3>Schott Watkins</h3>
+              <span>Web Developer</span>
+              <div class="icons">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="card">
+          <div class="image">
+              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
+          </div>
+          <div class="info">
+              <h3>Nicole Bell</h3>
+              <span>Mobile Developer</span>
+              <div class="icons">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="card">
+          <div class="image">
+              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
+          </div>
+          <div class="info">
+              <h3>John Doe</h3>
+              <span>Graphic Designer</span>
+              <div class="icons">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook">Facebook</a>
+                  <a href="https://twitter.com/login" class="fab fa-twitter">Twitter</a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="card">
+          <div class="image">
+              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
+          </div>
+          <div class="info">
+              <h3>Rose Matthews</h3>
+              <span>Web Designer</span>
+              <div class="icons">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+    <h1 class="heading">get in touch</h1>
+</section>
+<div class="contact-in">
+    <div class="contact-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="contact-form">
+    <form action="/submit" method="POST">
+        <input type="text" name="name" placeholder="Name" required><br><br>
+        <input type="tel" name="phone" placeholder="Contact number" maxlength="10" pattern="[0-9]{10}" required><br><br>
+        <input type="email" name="email" placeholder="Email" required><br><br>
+        <textarea name="message" placeholder="Your Message" required></textarea><br><br>
+        <input type="submit" value="Send Message">
+    </form>
+</form>
+
+        
+    </div>
+    </div>
+
+    <section class="faq">
+      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
+      <div class="row">
+          <div class="accordion-container">
+              <div class="accordion">
+                  <div class="accordion-header">
+                      <span>+</span>
+                      <h3>How much will it cost?</h3>
+                  </div>
+                 
+              </div>
+              <div class="accordion">
+                  <div class="accordion-header">
+                      <span>+</span>
+                      <h3>How long it takes to design?</h3>
+                  </div>
+                 
+              </div>
+              <div class="accordion">
+                  <div class="accordion-header">
+                      <span>+</span>
+                      <h3>How do I associate with IT Company?</h3>
+                  </div>
+                 
+              </div>
+              <div class="accordion">
+                  <div class="accordion-header">
+                      <span>+</span>
+                      <h3>Can you help my current site look more professional?</h3>
+                  </div>
+                  
+              </div>
+              <div class="accordion">
+                  <div class="accordion-header">
+                      <span>+</span>
+                      <h3>When do I pay?</h3>
+                  </div>
+                 
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <div class="footer">
+      <div class="footer-top">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-4 col-md-8 footer-links">
+                      <h4>About Us</h4>
+                      <ul>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
+                      </ul>
+                  </div>
+
+                  
+
+                  <div class="col-lg-5 col-md-10 footer-contact" style="font-size: 1.5rem;">
+                      <h4>Contact Us</h4>
+                      <p>
+                          127, 14 th cross street, CLRI Nagar<br>
+                          Neelankarai, <br>Chennai - 600115,
+
+                          Tamil Nadu, India<br>
+                          
+                          <strong>Phone:</strong> +91 8220011597  <br>
+                          <strong>Email:</strong> umasivakumar@apexpioneer.in<br>
+                      </p>
+
+                      <div class="social-links">
+                         
+                          <a href="https://www.linkedin.com/in/apexpioneer-software-solutions-30bb65378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+                          <a href="https://maps.app.goo.gl/TXq4LDH7EsebNtZz7"><i class="fas fa-map-marker-alt"></i></a>
+                          <a href="https://wa.me/8220011598"><i class="fab fa-whatsapp"></i></a>
+                      </div>
+
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-newsletter">
+                      <h4>Subscription</h4>
+                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
+                      <form action="" method="post">
+                          <input type="email" name="email"><input type="submit"  value="Subscribe">
+                      </form>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
+                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+
+  
+  </script>
+
+</body>
+</html>

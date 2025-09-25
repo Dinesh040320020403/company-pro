@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Company Website</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/careers.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./images/ap2.png">
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./js/main.js"></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#" class="logo">
+      <img src="./images/ap2.png" alt="logo">
+    </a>
+    <div class="fas fa-bars"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="career.html">Career</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Watermark -->
+  <div class="watermark">
+    <img src="./images/ap2.png" alt="apex pioneer">
+  </div>
+
+  <!-- Hero -->
+  <section id="home" class="home">
+    <h2>
+      “The secret of getting ahead is getting started.”  
+      <br>- Mark Twain, Writer, publisher, and lecturer
+    </h2>
+  </section>
+
+  <!-- Career Section -->
+  <section id="career-heading" class="career-heading">
+    <h1 class="heading">Career</h1>
+    <p>Job Opening in IT Company. Apply Now!</p>
+  </section>
+
+  <div class="career">
+    <div class="career-form">
+      <form id="careerForm">
+        <input type="text" name="name" placeholder="Name" class="career-form-txt" required>
+        <input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10" placeholder="Contact number" class="career-form-phone" required>
+        <input type="email" name="email" placeholder="Email" class="career-form-email" required>
+
+        <!-- Radio Buttons -->
+        <div class="radio-class">
+          <h2 class="name">Apply For Which Post?</h2>
+          <label class="radio">
+            <input type="radio" name="status" value="Web Designer" checked>
+            Web Designer
+          </label>
+          <label class="radio">
+            <input type="radio" name="status" value="Web Developer">
+            Web Developer
+          </label>
+          <label class="radio">
+            <input type="radio" name="status" value="Mobile App Designer">
+            Mobile App Designer
+          </label>
+          <label class="radio">
+            <input type="radio" name="status" value="Mobile App Developer">
+            Mobile App Developer
+          </label>
+          <label class="radio">
+            <input type="radio" name="status" value="Digital Marketer">
+            Digital Marketer
+          </label>
+        </div>
+
+        <input type="number" name="experience" placeholder="Years of Experience" class="career-form-experience" required>
+        <textarea name="details" placeholder="Other Details" class="career-form-txtarea" required></textarea>
+
+        <!-- File Upload -->
+        <div class="file">
+          <h2 class="name">Upload Your Resume</h2>
+          <input class="upload" type="file" name="fileToUpload" accept=".doc,.docx,.pdf">
+        </div>
+
+        <input type="submit" value="Submit" class="career-form-btn">
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <!-- About -->
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>About Us</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#home">Home</a></li>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#about">About us</a></li>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#service">Our services</a></li>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#home">Terms & condition</a></li>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#home">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Useful Links -->
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="career.html">Career</a></li>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#contact">Contact</a></li>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.2rem;">
+            <h4>Contact Us</h4>
+            <p>
+              1300 Center Avenue<br>
+              Fresno, California<br>
+              United States<br>
+              <strong>Phone:</strong> +123-456-7890<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+            <div class="social-links">
+              <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/login?lang=en"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+              <a href="https://accounts.google.com/"><i class="fab fa-google"></i></a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Subscription</h4>
+            <p>Subscribe here to get our latest updates.</p>
+            <form action="" method="post">
+              <input type="email" name="email">
+              <input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 copyright" style="color: #fff; font-size: 1.1rem;">
+          Copyright &copy; 2021 IT Company Website. All Rights Reserved.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+
+  <!-- Google Sheets Integration -->
+  <script>
+    document.getElementById("careerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = {
+        name: this.name.value,
+        phone: this.phone.value,
+        email: this.email.value,
+        status: this.status.value,
+        experience: this.experience.value,
+        details: this.details.value
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbxDVKUUWjv7eDoMo3QYgj4hD7ifRn-KhV_XyDExjb_llF3TINjIr_t9LT5DYf-mUopUxg/exec", {
+        method: "POST",
+        body: JSON.stringify(formData)
+      })
+        .then(res => res.text())
+        .then(data => {
+          alert("✅ Form submitted successfully!");
+          this.reset();
+        })
+        .catch(err => alert("❌ Error: " + err));
+    });
+
+     MailApp.sendEmail({
+      to: data.email,
+      subject: "Application Received - IT Company",
+      htmlBody: `
+        <p>Dear ${data.name},</p>
+        <p>Thank you for applying for the <b>${data.status}</b> position.</p>
+        <p>We have successfully received your application.</p>
+        <p>Our HR team will review your application and contact you soon.</p>
+        <br>
+        <p>Best Regards,<br>IT Company HR Team</p>
+      `
+    });
+  </script>
+
+</body>
+</html>
