@@ -53,7 +53,12 @@ body{
   z-index: 1000;
   left: 0; top: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem;
 }
 
 .openForm{
@@ -61,17 +66,76 @@ body{
 
 }
 .popup-content {
-  background: #fff;
-  padding: 20px;
-  margin: 10% auto;
-  width: 350px;
-  border-radius: 10px;
-  text-align: center;
+  background: #ffffff;
+  padding: 2.4rem 2.4rem 2rem 2.4rem;
+  width:  min(92vw, 420px);
+  border-radius: 18px;
+  text-align: left;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  position: relative;
+}
+.popup.active .popup-content{
+  animation: popIn 320ms cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes popIn{
+  0%{ transform: translateY(10px) scale(.96); opacity: 0; }
+  100%{ transform: translateY(0) scale(1); opacity: 1; }
 }
 .close {
-  float: right;
+  position: absolute;
+  top: 10px;
+  right: 12px;
   font-size: 22px;
   cursor: pointer;
+  color: #6b7790;
+}
+.close:hover{ color: #002e5f; transform: scale(1.05); }
+
+/* Popup heading */
+.popup-content h2{
+  margin: 0 0 1.2rem 0;
+  font-size: 2.2rem;
+  color: #002e5f;
+}
+
+/* Form controls inside popup */
+#appointmentData input[type="text"],
+#appointmentData input[type="email"],
+#appointmentData input[type="tel"]{
+  width: 100%;
+  margin: 0.6rem 0 1.2rem 0;
+  padding: 1.0rem 1.2rem;
+  border: 1.5px solid #d7deea;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  color: #1b2430;
+  outline: none;
+  background: #f8fbff;
+}
+#appointmentData input:focus{
+  border-color: #00bfff;
+  box-shadow: 0 0 0 4px rgba(0,191,255,0.15);
+  background: #ffffff;
+}
+
+#appointmentData .btn{
+  width: 100%;
+  border-radius: 9999px;
+  padding: 1.0rem 1.6rem;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #00bfff 0%, #002e5f 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0, 47, 95, 0.25);
+}
+#appointmentData .btn:hover{
+  filter: brightness(1.05);
+}
+
+#responseMsg{
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  color: #2b7a0b;
 }
 
 .cal-dropdown .dropdown-content {
@@ -233,6 +297,32 @@ body{
     z-index: 100;
     position: fixed;
     background-color:gray;
+}
+
+/* Book Appointment button (header) */
+.book-appointment-btn{
+    outline: none;
+    border: none;
+    border-radius: 9999px;
+    padding: 0.9rem 2.2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #00bfff 0%, #002e5f 100%);
+    box-shadow: 0 8px 18px rgba(0, 47, 95, 0.35);
+    cursor: pointer;
+    transform: translateZ(0);
+}
+
+.book-appointment-btn:hover{
+    letter-spacing: .02rem;
+    box-shadow: 0 10px 22px rgba(0, 47, 95, 0.5);
+    filter: brightness(1.05);
+}
+
+.book-appointment-btn:active{
+    transform: translateY(1px);
+    box-shadow: 0 6px 14px rgba(0, 47, 95, 0.35);
 }
 
 
