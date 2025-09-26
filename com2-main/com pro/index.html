@@ -45,7 +45,7 @@
         </ul>
     </nav>
 
-    <button id="openForm" class="btn book-appointment-btn">Book Appointment</button>
+    <button id="openForm" class=" book-appointment-btn">Book Appointment</button>
 
 <!-- Popup Form -->
 <div id="appointmentForm" class="popup">
@@ -97,7 +97,7 @@ document.getElementById("appointmentData").onsubmit = async (e) => {
     body: JSON.stringify(formData)
   });
 
-  document.getElementById("responseMsg").innerText = "Appointment booked successfully!";
+  document.getElementById("responseMsg").innerText = "Appointment booked successfully!Our Team Will Contact Soon";
   e.target.reset();
 };
 </script>
